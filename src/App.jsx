@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import sample from "../src/time-lapse-clouds.mp4"
 
 function App() {
   const [data, setData] = useState({});
@@ -18,7 +19,11 @@ function App() {
     }
   };
   return (
-    <div className="min-h-screen bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 pt-4">
+    
+    <div className="min-h-screen">
+      <video className="w-50" src={sample} autoPlay loop muted />
+    <div className="absolute">
+      
       <div class="max-w-md mx-auto">
         <div class="relative flex items-center w-full h-12 rounded-lg focus-within:shadow-lg bg-white overflow-hidden">
           <div class="grid place-items-center h-full w-12 text-gray-300">
@@ -48,9 +53,11 @@ function App() {
           />
         </div>
       </div>
-
+      <h1 className="text-6xl font-bold font-normal leading-normal mt-4 mb-2 text-pink-800 text-center">
+        Weather Forecast App
+      </h1>
       <div class="mt-6 flex items-center justify-center">
-        <div class="flex flex-col backdrop-blur-md bg-white/80 shadow-xl border-4 border-indigo-600/60 hover:border-indigo-700 rounded-md p-4 w-full max-w-xs">
+        <div class="flex flex-col backdrop-blur-md bg-white/80 shadow-xl border-4 border-indigo-600/60 rounded-md p-4 w-full max-w-xs">
           <div class="font-bold text-3xl">{data.name}</div>
           <div class="text-sm text-gray-500">{date}</div>
           <div class="mt-3 text-6xl self-center inline-flex items-center justify-center rounded-lg text-indigo-400 h-34 w-34">
@@ -111,6 +118,8 @@ function App() {
         </div>
       </div>
     </div>
+    </div>
+  
   );
 }
 
