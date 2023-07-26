@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import sample from "../src/time-lapse-clouds.mp4"
+
 
 function App() {
   const [data, setData] = useState({});
@@ -20,10 +20,7 @@ function App() {
   };
   return (
     
-    <div className="min-h-screen">
-      <video className="w-50" src={sample} autoPlay loop muted />
-    <div className="absolute">
-      
+    <div className="min-h-screen bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 pt-4">
       <div class="max-w-md mx-auto">
         <div class="relative flex items-center w-full h-12 rounded-lg focus-within:shadow-lg bg-white overflow-hidden">
           <div class="grid place-items-center h-full w-12 text-gray-300">
@@ -118,7 +115,7 @@ function App() {
         </div>
       </div>
     </div>
-    </div>
+    
   
   );
 }
